@@ -1,0 +1,100 @@
+/* =========================================
+   Reset Básico e Comportamento
+   ========================================= */
+html {
+    /* Garante que o clique nos links do menu role a página suavemente */
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   Paleta Premium - Imobiliária (Novo Design)
+   ========================================= */
+:root {
+    --color-primary: #1a2332;        /* Cinza Escuro/Ardósia - Fundo profissional */
+    --color-accent: #2d7d72;         /* Verde Esmeralda - Acento principal */
+    --color-accent-light: #f9f7f4;   /* Branco/Creme - Fundo base */
+    --color-text: #1a2332;           /* Texto em cinza escuro */
+    --color-highlight: #d4a574;      /* Dourado suave (opcional, para destaque) */
+}
+
+body {
+    background-color: var(--color-accent-light);
+    color: var(--color-text);
+}
+
+/* =========================================
+   Classes Utilitárias Customizadas
+   ========================================= */
+
+/* Efeito Glassmorphism para a Navbar */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Suporte para Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Animação de Brilho contínuo para botões CTA */
+@keyframes shine {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+}
+
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-accent); /* Verde Esmeralda */
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Ícone de perfil - Logo */
+.profile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: none;
+    background: #fff;
+}
+
+.btn-shine:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(45, 125, 114, 0.4);
+}
+
+.btn-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-20deg);
+    animation: shine 4s infinite;
+}
+
+/* =========================================
+   Tipografia e Espaçamento Premium
+   ========================================= */
+.font-serif {
+    letter-spacing: -0.5px;
+}
+
+/* Hover effects para links e botões */
+a {
+    transition: all 0.3s ease;
+}
+
+/* =========================================
+   Responsividade e Ajustes Visuais
+   ========================================= */
+@media (max-width: 640px) {
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.9);
+    }
+}
